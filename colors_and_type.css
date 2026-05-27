@@ -1,0 +1,311 @@
+/* ============================================================
+   ZERO-X DESIGN SYSTEM — Colors & Type
+   Industrial clean-energy identity. Dark-first. Teal signal.
+   ============================================================ */
+
+/* ---------- FONT FACES ---------- */
+/* Primary: Lato (provided by brand, full weight range) */
+@font-face { font-family: "Lato"; font-style: normal; font-weight: 100; src: url("fonts/Lato-Thin.ttf") format("truetype"); }
+@font-face { font-family: "Lato"; font-style: italic; font-weight: 100; src: url("fonts/Lato-ThinItalic.ttf") format("truetype"); }
+@font-face { font-family: "Lato"; font-style: normal; font-weight: 300; src: url("fonts/Lato-Light.ttf") format("truetype"); }
+@font-face { font-family: "Lato"; font-style: italic; font-weight: 300; src: url("fonts/Lato-LightItalic.ttf") format("truetype"); }
+@font-face { font-family: "Lato"; font-style: normal; font-weight: 400; src: url("fonts/Lato-Regular.ttf") format("truetype"); }
+@font-face { font-family: "Lato"; font-style: italic; font-weight: 400; src: url("fonts/Lato-Italic.ttf") format("truetype"); }
+@font-face { font-family: "Lato"; font-style: normal; font-weight: 700; src: url("fonts/Lato-Bold.ttf") format("truetype"); }
+@font-face { font-family: "Lato"; font-style: italic; font-weight: 700; src: url("fonts/Lato-BoldItalic.ttf") format("truetype"); }
+@font-face { font-family: "Lato"; font-style: normal; font-weight: 900; src: url("fonts/Lato-Black.ttf") format("truetype"); }
+@font-face { font-family: "Lato"; font-style: italic; font-weight: 900; src: url("fonts/Lato-BlackItalic.ttf") format("truetype"); }
+
+/* Display / Industrial numerals: Antonio (condensed, engineered) */
+@font-face {
+  font-family: "Antonio";
+  font-style: normal;
+  font-weight: 100 700;
+  src: url("fonts/Antonio-VariableFont_wght.ttf") format("truetype-variations");
+}
+
+/* Technical / Mono — Google Fonts fallback (IBM Plex Mono). */
+/* Flagged substitution: no brand mono font provided. */
+@import url("https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&display=swap");
+
+:root {
+  /* ============================================================
+     COLOR TOKENS
+     ============================================================ */
+
+  /* CORE INDUSTRIAL PALETTE */
+  --zx-carbon:        #1D2228;  /* Carbon black / graphite — primary surface */
+  --zx-carbon-deep:   #010e10;  /* Deep teal-black — used as primary site bg */
+  --zx-carbon-raised: #0a1820;  /* Alternate section bg */
+  --zx-carbon-footer: #070710;  /* Footer bg */
+  --zx-teal:          #1ebec8;  /* Industrial green / signal teal */
+  --zx-yellow:        #ffcc32;  /* Steel yellow — energy accent */
+  --zx-yellow-warm:   #f4c400;  /* Deployed warm yellow variant used on site */
+  --zx-off-white:     #F4F5F2;  /* Off-white — body on light, reversed bg */
+  --zx-bronze:        #9A7448;  /* Energy bronze / muted copper */
+
+  /* SURFACES */
+  --zx-bg:            var(--zx-carbon-deep);
+  --zx-surface:       rgba(255, 255, 255, 0.02);   /* card fill on dark */
+  --zx-surface-2:     rgba(255, 255, 255, 0.04);   /* hover state */
+  --zx-surface-3:     rgba(255, 255, 255, 0.06);   /* active state */
+  --zx-tint-teal:     rgba(30, 190, 200, 0.10);
+  --zx-tint-yellow:   rgba(255, 204, 50, 0.10);
+
+  /* FOREGROUND (on dark bg) */
+  --zx-fg-1:          rgba(255, 255, 255, 1.00);   /* Headlines */
+  --zx-fg-2:          rgba(255, 255, 255, 0.80);   /* Body strong */
+  --zx-fg-3:          rgba(255, 255, 255, 0.60);   /* Body */
+  --zx-fg-4:          rgba(255, 255, 255, 0.40);   /* Secondary / labels */
+  --zx-fg-5:          rgba(255, 255, 255, 0.25);   /* Tertiary / footer */
+  --zx-fg-6:          rgba(255, 255, 255, 0.15);   /* Disabled / dividers */
+
+  /* FOREGROUND (on light bg) */
+  --zx-fg-on-light-1: #0b0f12;
+  --zx-fg-on-light-2: #1D2228;
+  --zx-fg-on-light-3: rgba(29, 34, 40, 0.72);
+  --zx-fg-on-light-4: rgba(29, 34, 40, 0.50);
+
+  /* BORDERS */
+  --zx-border-1:      rgba(255, 255, 255, 0.06);   /* default card border */
+  --zx-border-2:      rgba(255, 255, 255, 0.10);   /* stronger */
+  --zx-border-teal:   rgba(30, 190, 200, 0.30);    /* accent border */
+  --zx-divider:       rgba(255, 255, 255, 0.10);   /* horizontal rules */
+
+  /* SEMANTIC */
+  --zx-signal:        var(--zx-teal);      /* links, active, focus */
+  --zx-energy:        var(--zx-yellow);    /* emphasis, metrics, CTAs */
+  --zx-success:       #1ebec8;
+  --zx-warning:       #ffcc32;
+  --zx-danger:        #E5484D;
+
+  /* CHART / DATA */
+  --zx-chart-1:       #1ebec8;   /* teal */
+  --zx-chart-2:       #ffcc32;   /* yellow */
+  --zx-chart-3:       #9A7448;   /* bronze */
+  --zx-chart-4:       #6a8a90;   /* muted teal */
+  --zx-chart-5:       #F4F5F2;   /* off-white */
+
+  /* GRADIENTS */
+  --zx-grad-signal:   linear-gradient(135deg, #1ebec8 0%, #ffcc32 100%);
+  --zx-grad-signal-soft: linear-gradient(135deg, rgba(30,190,200,0.20), rgba(255,204,50,0.20));
+  --zx-grad-hero:     radial-gradient(circle at 25% 30%, rgba(30,190,200,0.10), transparent 50%), radial-gradient(circle at 75% 70%, rgba(255,204,50,0.08), transparent 50%);
+  --zx-grad-fade-top: linear-gradient(to bottom, var(--zx-carbon-deep), transparent);
+  --zx-hairline:      linear-gradient(to right, transparent, rgba(255,255,255,0.10), transparent);
+
+  /* SHADOWS / ELEVATION */
+  --zx-shadow-1:      0 1px 2px rgba(0, 0, 0, 0.20);
+  --zx-shadow-2:      0 4px 12px rgba(0, 0, 0, 0.30);
+  --zx-shadow-3:      0 12px 32px rgba(0, 0, 0, 0.40);
+  --zx-glow-teal:     0 0 0 1px rgba(30,190,200,0.30), 0 8px 32px rgba(30,190,200,0.15);
+  --zx-glow-yellow:   0 0 0 1px rgba(255,204,50,0.30), 0 8px 32px rgba(255,204,50,0.15);
+  --zx-inner-glow:    inset 0 0 60px rgba(30,190,200,0.05);
+
+  /* RADII */
+  --zx-radius-sm:     6px;    /* small pills / tags */
+  --zx-radius-md:     8px;    /* buttons / inputs */
+  --zx-radius-lg:     12px;   /* small cards, spec rows */
+  --zx-radius-xl:     16px;   /* product cards */
+  --zx-radius-2xl:    20px;   /* large feature cards */
+  --zx-radius-pill:   999px;  /* CTAs, badges */
+
+  /* SPACING (8pt rhythm, with industrial generosity) */
+  --zx-space-1:       4px;
+  --zx-space-2:       8px;
+  --zx-space-3:       12px;
+  --zx-space-4:       16px;
+  --zx-space-5:       24px;
+  --zx-space-6:       32px;
+  --zx-space-7:       48px;
+  --zx-space-8:       64px;
+  --zx-space-9:       96px;
+  --zx-space-10:      128px;  /* section padding */
+
+  /* ============================================================
+     TYPE SYSTEM
+     ============================================================ */
+
+  /* FAMILIES */
+  --zx-font-display:  "Antonio", "Oswald", "Arial Narrow", sans-serif;
+  --zx-font-body:     "Lato", "Inter", system-ui, -apple-system, sans-serif;
+  --zx-font-mono:     "IBM Plex Mono", "JetBrains Mono", ui-monospace, monospace;
+
+  /* WEIGHTS */
+  --zx-weight-thin:       100;
+  --zx-weight-light:      300;
+  --zx-weight-regular:    400;
+  --zx-weight-bold:       700;
+  --zx-weight-black:      700;
+
+  /* LINE HEIGHTS */
+  --zx-lh-tight:      1.05;
+  --zx-lh-display:    1.10;
+  --zx-lh-heading:    1.20;
+  --zx-lh-body:       1.55;
+  --zx-lh-relaxed:    1.75;
+
+  /* TRACKING */
+  --zx-track-tight:   -0.02em;
+  --zx-track-normal:  0;
+  --zx-track-eyebrow: 0.30em;     /* section eyebrows: "TECHNOLOGY" */
+  --zx-track-label:   0.12em;     /* small caps / ui labels */
+
+  /* SCALE — Fluid, sized for industrial product + marketing */
+  --zx-text-display-xl: clamp(56px, 7vw, 112px);
+  --zx-text-display-lg: clamp(44px, 5.5vw, 80px);
+  --zx-text-display-md: clamp(36px, 4vw, 56px);
+  --zx-text-h1:         clamp(32px, 3.5vw, 48px);
+  --zx-text-h2:         clamp(26px, 2.5vw, 36px);
+  --zx-text-h3:         22px;
+  --zx-text-h4:         18px;
+  --zx-text-body-lg:    18px;
+  --zx-text-body:       16px;
+  --zx-text-body-sm:    14px;
+  --zx-text-caption:    12px;
+  --zx-text-eyebrow:    12px;
+
+  /* MOTION */
+  --zx-ease:          cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  --zx-ease-out:      cubic-bezier(0.16, 1, 0.3, 1);
+  --zx-dur-fast:      180ms;
+  --zx-dur:           320ms;
+  --zx-dur-slow:      500ms;
+}
+
+/* ============================================================
+   SEMANTIC TYPE RULES
+   ============================================================ */
+
+body {
+  font-family: var(--zx-font-body);
+  font-weight: var(--zx-weight-regular);
+  font-size: var(--zx-text-body);
+  line-height: var(--zx-lh-body);
+  color: var(--zx-fg-2);
+  background: var(--zx-bg);
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+.zx-display-xl {
+  font-family: var(--zx-font-display);
+  font-weight: var(--zx-weight-bold);
+  font-size: var(--zx-text-display-xl);
+  line-height: var(--zx-lh-tight);
+  letter-spacing: var(--zx-track-tight);
+  color: var(--zx-fg-1);
+  text-transform: uppercase;
+}
+
+.zx-display-lg {
+  font-family: var(--zx-font-display);
+  font-weight: var(--zx-weight-bold);
+  font-size: var(--zx-text-display-lg);
+  line-height: var(--zx-lh-display);
+  letter-spacing: var(--zx-track-tight);
+  color: var(--zx-fg-1);
+  text-transform: uppercase;
+}
+
+.zx-h1 {
+  font-family: var(--zx-font-body);
+  font-weight: var(--zx-weight-black);
+  font-size: var(--zx-text-h1);
+  line-height: var(--zx-lh-heading);
+  letter-spacing: var(--zx-track-tight);
+  color: var(--zx-fg-1);
+}
+
+.zx-h2 {
+  font-family: var(--zx-font-body);
+  font-weight: var(--zx-weight-bold);
+  font-size: var(--zx-text-h2);
+  line-height: var(--zx-lh-heading);
+  letter-spacing: var(--zx-track-tight);
+  color: var(--zx-fg-1);
+}
+
+.zx-h3 {
+  font-family: var(--zx-font-body);
+  font-weight: var(--zx-weight-bold);
+  font-size: var(--zx-text-h3);
+  line-height: var(--zx-lh-heading);
+  color: var(--zx-fg-1);
+}
+
+.zx-h4 {
+  font-family: var(--zx-font-body);
+  font-weight: var(--zx-weight-bold);
+  font-size: var(--zx-text-h4);
+  line-height: var(--zx-lh-heading);
+  color: var(--zx-fg-1);
+}
+
+.zx-body {
+  font-family: var(--zx-font-body);
+  font-weight: var(--zx-weight-regular);
+  font-size: var(--zx-text-body);
+  line-height: var(--zx-lh-body);
+  color: var(--zx-fg-3);
+}
+
+.zx-body-lg {
+  font-family: var(--zx-font-body);
+  font-weight: var(--zx-weight-regular);
+  font-size: var(--zx-text-body-lg);
+  line-height: var(--zx-lh-body);
+  color: var(--zx-fg-3);
+}
+
+.zx-body-sm {
+  font-size: var(--zx-text-body-sm);
+  line-height: var(--zx-lh-body);
+  color: var(--zx-fg-4);
+}
+
+.zx-eyebrow {
+  font-family: var(--zx-font-body);
+  font-size: var(--zx-text-eyebrow);
+  font-weight: var(--zx-weight-bold);
+  letter-spacing: var(--zx-track-eyebrow);
+  text-transform: uppercase;
+  color: var(--zx-signal);
+}
+
+.zx-label {
+  font-family: var(--zx-font-body);
+  font-size: var(--zx-text-caption);
+  font-weight: var(--zx-weight-bold);
+  letter-spacing: var(--zx-track-label);
+  text-transform: uppercase;
+  color: var(--zx-fg-4);
+}
+
+.zx-mono {
+  font-family: var(--zx-font-mono);
+  font-size: var(--zx-text-body-sm);
+  letter-spacing: 0;
+  color: var(--zx-fg-3);
+}
+
+.zx-metric {
+  font-family: var(--zx-font-display);
+  font-weight: var(--zx-weight-bold);
+  font-size: var(--zx-text-display-md);
+  letter-spacing: var(--zx-track-tight);
+  line-height: 1;
+  color: var(--zx-fg-1);
+}
+
+.zx-metric .zx-metric-unit {
+  color: var(--zx-teal);
+  font-size: 0.65em;
+}
+
+/* Text utility: signal gradient text (used sparingly on headline spans) */
+.zx-text-signal {
+  background: var(--zx-grad-signal);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
